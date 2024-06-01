@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-    res.send('Se recuperan todas las publicaciones');
-});
+const { getAllPosts } = require('../../controllers/posts.controller');
+
+router.get('/', getAllPosts);
 
 
-module.exports = router;
+module.exports = router; 
