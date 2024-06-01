@@ -1,0 +1,29 @@
+@PORT = 3000
+
+@HOST = http://localhost:{{PORT}}
+
+GET {{HOST}}/api/posts
+###
+POST {{HOST}}/api/posts
+Content-Type: application/json
+
+{
+    "Titulo": "Post Title",
+    "Descripcion": "Post Content",
+    "Fecha de creacion": "2021-09-01 T00:00:00.000Z",
+    "Categoria": "Categoria 1",
+    "Autor_id": "Autor 1"
+}
+###
+GET {{HOST}}/api/autors
+###
+POST {{HOST}}/api/autors
+Content-Type: application/json
+
+{
+     "titulo": "Contenido_titulo",
+     "descripción": "Contenido_descripcion",
+     "fecha-creacion": "1990-09-01 T00:00:00.000Z",
+     "categoria": "categoria_contenido",
+     "autor_id": "id_autor"
+}
