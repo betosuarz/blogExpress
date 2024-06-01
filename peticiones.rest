@@ -5,6 +5,7 @@
 GET {{HOST}}/api/posts
 ###
 POST {{HOST}}/api/posts
+Content-Type: application/json
 
 {
     "Titulo": "Post Title",
@@ -17,6 +18,7 @@ POST {{HOST}}/api/posts
 GET {{HOST}}/api/autors
 ###
 POST {{HOST}}/api/autors
+Content-Type: application/json
 
 {
      "titulo": "Contenido_titulo",

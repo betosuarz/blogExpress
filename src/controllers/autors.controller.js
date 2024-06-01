@@ -3,6 +3,7 @@ const getAllAutors = (req, res) => {
 }
 
 const createAutors = (req, res) => {
+    console.log(req.body);
     res.send('Se crea un nuevo autor');
 }
 

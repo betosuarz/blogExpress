@@ -2,6 +2,7 @@ const express = require('express');
 const dayjs = require('dayjs');
 
 const app = express();
+app.use(express.json());
 
 app.use((req, res, next) => {
     console.log(dayjs().format('YYYY-MM-DD HH:mm:ss'));

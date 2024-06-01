@@ -3,6 +3,7 @@ const getAllPosts = (req, res) => {
 }
 
 const createPost = (req, res) => {
+    console.log(req.body);
     res.send('Se crea una nueva publicación');
 }
 
