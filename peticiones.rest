@@ -15,3 +15,13 @@ POST {{HOST}}/api/posts
 }
 ###
 GET {{HOST}}/api/autors
+###
+POST {{HOST}}/api/autors
+
+{
+     "titulo": "Contenido_titulo",
+     "descripción": "Contenido_descripcion",
+     "fecha-creacion": "1990-09-01 T00:00:00.000Z",
+     "categoria": "categoria_contenido",
+     "autor_id": "id_autor"
+}
