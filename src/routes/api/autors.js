@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-    res.send('Se recuperan todos los autores');
-});
+const { getAllPosts } = require('../../controllers/autors.controller');
+
+router.get('/', getAllAutors);
 
 
-module.exports = router;
+module.exports = router; 
