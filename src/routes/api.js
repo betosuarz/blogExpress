@@ -1,7 +1,8 @@
 
 const router = require('express').Router();
 
-router.use('/posts', require('./api/posts')) 
+router.use('/posts', require('./api/posts'))
+router.use('/autors', require('./api/autors'))
 
 
-module.exports = require;
+module.exports = router;
