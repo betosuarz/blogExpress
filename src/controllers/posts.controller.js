@@ -1,9 +1,14 @@
-const getAllPosts = (req, res) => {
-    res.send('Se recuperan todas las publicaciones');
+const getAllPosts = async (req, res) => {
+    const [result] = await db.query('SELECT * FROM post'); 
+
+    res.json(result);
 }
 
 const createPost = (req, res) => {
-    console.log(req.body);
+    console.log(req.body['titulo']);
+    const { titulo: title } = req.body;
+    console.log(title);
+
     res.send('Se crea una nueva publicación');
 }
 

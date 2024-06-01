@@ -1,5 +1,7 @@
-const getAllAutors = (req, res) => {
-    res.send('Se recuperan todos los autores');
+const getAllAutors = async (req, res) => {
+    const [result] = await db.query('SELECT * FROM autor');
+    
+    res.json(result);
 }
 
 const createAutors = (req, res) => {
