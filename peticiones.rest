@@ -8,11 +8,11 @@ POST {{HOST}}/api/posts
 Content-Type: application/json
 
 {
-    "Titulo": "Post Title",
-    "Descripcion": "Post Content",
-    "Fecha de creacion": "2021-09-01 T00:00:00.000Z",
-    "Categoria": "Categoria 1",
-    "Autor_id": "Autor 1"
+    "titulo": "Post Title",
+    "descripcion": "Post Content",
+    "fecha_creacion": "2021-09-01 T00:00:00.000Z",
+    "categoria": "Categoria 1",
+    "autor_id": "1"
 }
 ###
 GET {{HOST}}/api/autors
