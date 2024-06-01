@@ -3,3 +3,4 @@
 @HOST = http://localhost:{{PORT}}
 
 GET {{HOST}}/api/posts
+GET {{HOST}}/api/autors
