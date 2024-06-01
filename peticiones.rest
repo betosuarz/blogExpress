@@ -3,4 +3,15 @@
 @HOST = http://localhost:{{PORT}}
 
 GET {{HOST}}/api/posts
+###
+POST {{HOST}}/api/posts
+
+{
+    "Titulo": "Post Title",
+    "Descripcion": "Post Content",
+    "Fecha de creacion": "2021-09-01 T00:00:00.000Z",
+    "Categoria": "Categoria 1",
+    "Autor_id": "Autor 1"
+}
+###
 GET {{HOST}}/api/autors
