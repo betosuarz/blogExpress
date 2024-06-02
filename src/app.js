@@ -13,5 +13,9 @@ app.use((req, res, next) => {
 
 app.use('/api', require('./routes/api'));
 
+app.use((err, req, res, next) => { 
+    res.status(500).json({ error: err.message });
+})
+
 
 module.exports = app;

@@ -1,8 +1,9 @@
 const router = require('express').Router();
 
-const { getAllPosts, createPost } = require('../../controllers/posts.controller');
+const { getAllPosts, createPost, getPostById } = require('../../controllers/posts.controller');
 
-router.get('/', getAllPosts );
+router.get('/', getAllPosts);
+router.get('/:id', getPostById);
 router.post('/', createPost );
 
 
