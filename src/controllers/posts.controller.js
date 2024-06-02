@@ -1,7 +1,12 @@
-const getAllPosts = async (req, res) => {
-    const [result] = await db.query('SELECT * FROM post'); 
+const post = require('../model/post.model');
 
-    res.json(result);
+const getAllPosts = async (req, res) => {
+    try {
+        const [result] = await post.selectAll(); 
+        res.json(result);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 }
 
 const createPost = (req, res) => {
