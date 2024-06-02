@@ -10,9 +10,9 @@ POST {{HOST}}/api/posts
 Content-Type: application/json
 
 {
-    "titulo": "Post Title",
+    "titulo": "Titulo_prueba",
     "descripcion": "Post Content",
-    "fecha_creacion": "2021-09-01 T00:00:00.000Z",
+    "fecha_creacion": "2021-09-01 00:00:00",
     "categoria": "Categoria 1",
     "autor_id": "1"
 }
