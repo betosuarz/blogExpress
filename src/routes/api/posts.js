@@ -1,9 +1,10 @@
 const router = require('express').Router();
 
-const { getAllPosts, createPost, getPostById } = require('../../controllers/posts.controller');
+const { getAllPosts, getPostById, getPostsByAutorId, createPost } = require('../../controllers/posts.controller');
 
 router.get('/', getAllPosts);
 router.get('/:id', getPostById);
+router.get('/autor/:autor_id', getPostsByAutorId);
 router.post('/', createPost);
 
 

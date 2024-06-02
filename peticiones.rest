@@ -2,10 +2,16 @@
 
 @HOST = http://localhost:{{PORT}}
 
+// Método para recuperar todos los posts de la base de datos 
 GET {{HOST}}/api/posts
 ###
+// Método para recuperar un post específico por su id 
 GET {{HOST}}/api/posts/2
 ###
+// Método para recuperar todos los posts de un autor específico
+GET {{HOST}}/api/posts/autor/11
+###
+// Método para crear una nueva publicación en la base de datos
 POST {{HOST}}/api/posts
 Content-Type: application/json
 
@@ -17,8 +23,10 @@ Content-Type: application/json
     "autor_id": "1"
 }
 ###
+// Método para recuperar todos los autores de la base de datos
 GET {{HOST}}/api/autors
 ###
+// Método para crear un nuevo autor en la base de datos
 POST {{HOST}}/api/autors
 Content-Type: application/json
 

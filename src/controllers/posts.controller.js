@@ -22,6 +22,21 @@ const getPostById = async (req, res, next) => {
     }
 }
 
+const getPostsByAutorId = async (req, res, next) => {
+    try {
+        const [result] = await post.selectByAutorId(req.params.autor_id);
+        if (result.length === 0) {
+            res.status(404).json('La publicación no ha sido encontrada');
+        } else if (result.length === 1) {
+            res.json(result[0]);
+        } else {
+            res.json(result);
+        }
+    } catch (err) {
+        next(err);
+    }
+}
+
 const createPost = async (req, res, next) => {
     try {
         const [result] = await post.insert(req.body); 
@@ -33,5 +48,5 @@ const createPost = async (req, res, next) => {
 }
 
 module.exports = {
-    getAllPosts, getPostById, createPost
+    getAllPosts, getPostById, getPostsByAutorId, createPost
 }
