@@ -24,9 +24,9 @@ const getPostById = async (req, res, next) => {
 
 const createPost = async (req, res, next) => {
     try {
-        const [result] = await post.insert(req.body); // No se maneja el error en este caso porque el error se maneja en el middleware de error en app.js 
-        const [[newPost]] = await post.SelectById(result.insertId); // Se obtiene el nuevo post creado para devolverlo como respuesta 
-        res.json(newPost); // Se devuelve el nuevo post creado
+        const [result] = await post.insert(req.body); 
+        const [[newPost]] = await post.SelectById(result.insertId);
+        res.json(newPost);
     } catch (err) {
         next(err);        
     }

@@ -1,22 +1,37 @@
 const autor = require('../model/autor.model');
 
-const getAllAutors = async (req, res) => {
+const getAllAutors = async (req, res, next) => {
     try {
         const [result] = await autor.selectAll(); 
         res.json(result);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        next(err);
     }
 }
 
-const createAutor = (req, res) => {
-    console.log(req.body['titulo']);
-    const { titulo: title } = req.body;
-    console.log(title);
+const getAutorById = async (req, res, next) => {
+    try {
+        const [result] = await autor.SelectById(req.params.id);
+        if (result.length === 0) {
+            return res.status(404).json({ error: 'El autor no ha sido encontrado' });
+        }
 
-    res.send('Se crea un nuevo autor');
+        res.json(result[0]);
+    } catch (err) {
+        next(err);
+    }
+}
+
+const createAutor = async (req, res, next) => {
+    try {
+        const [result] = await autor.insert(req.body); 
+        const [[newAutor]] = await autor.SelectById(result.insertId);
+        res.json(newAutor);
+    } catch (err) {
+        next(err);        
+    }
 }
 
 module.exports = {
-    getAllAutors, createAutor
+    getAllAutors, getAutorById, createAutor
 }
