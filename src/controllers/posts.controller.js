@@ -2,7 +2,7 @@ const post = require('../model/post.model');
 
 const getAllPosts = async (req, res, next) => {
     try {
-        const [result] = await post.selectAll(); 
+        const [result] = await post.selectAllWithAuthor(); 
         res.json(result);
     } catch (err) {
         next(err);
@@ -11,7 +11,7 @@ const getAllPosts = async (req, res, next) => {
 
 const getPostById = async (req, res, next) => {
     try {
-        const [result] = await post.SelectById(req.params.id);
+        const [result] = await post.selectById(req.params.id);
         if (result.length === 0) {
             return res.status(404).json({ error: 'La publicación no ha sido encontrada' });
         }
@@ -25,7 +25,7 @@ const getPostById = async (req, res, next) => {
 const createPost = async (req, res, next) => {
     try {
         const [result] = await post.insert(req.body); 
-        const [[newPost]] = await post.SelectById(result.insertId);
+        const [[newPost]] = await post.selectById(result.insertId);
         res.json(newPost);
     } catch (err) {
         next(err);        

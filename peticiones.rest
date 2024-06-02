@@ -4,7 +4,7 @@
 
 GET {{HOST}}/api/posts
 ###
-GET {{HOST}}/api/posts/1
+GET {{HOST}}/api/posts/2
 ###
 POST {{HOST}}/api/posts
 Content-Type: application/json
