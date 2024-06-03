@@ -47,6 +47,13 @@ const insert = ({ titulo, descripcion, fecha_creacion, categoria, autor_id }) =>
     return db.query('INSERT INTO post (titulo, descripcion, fecha_creacion, categoria, autor_id) VALUES (?, ?, ?, ?, ?)', [titulo, descripcion, fecha_creacion, categoria, autor_id]);
 }    
 
+const updatePostById = (id, { titulo, descripcion, fecha_creacion, categoria, autor_id }) => {
+    return db.query(
+        'UPDATE post SET titulo = ?, descripcion = ?, fecha_creacion = ?, categoria = ?, autor_id = ? WHERE id = ? ',
+        [titulo, descripcion, fecha_creacion, categoria, autor_id, id]
+    );
+}
+
 module.exports = {
-    selectAll, selectAllWithAuthor, selectById, selectByAutorId, insert
+    selectAll, selectAllWithAuthor, selectById, selectByAutorId, insert, updatePostById
 }

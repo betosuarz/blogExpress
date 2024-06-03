@@ -11,6 +11,9 @@ GET {{HOST}}/api/posts/2
 // Método para recuperar todos los posts de un autor específico
 GET {{HOST}}/api/posts/autor/11
 ###
+// Método para recuperar todos los autores de la base de datos
+GET {{HOST}}/api/autors
+###
 // Método para crear una nueva publicación en la base de datos
 POST {{HOST}}/api/posts
 Content-Type: application/json
@@ -23,9 +26,6 @@ Content-Type: application/json
     "autor_id": "1"
 }
 ###
-// Método para recuperar todos los autores de la base de datos
-GET {{HOST}}/api/autors
-###
 // Método para crear un nuevo autor en la base de datos
 POST {{HOST}}/api/autors
 Content-Type: application/json
@@ -35,3 +35,33 @@ Content-Type: application/json
     "email": "email_de_pruebas",
     "imagen": "https://example.com/images.jpg"
 }
+###
+// Método para actualizar una publicación específica por su id
+PUT {{HOST}}/api/posts/30
+Content-Type: application/json
+
+{
+    "titulo": "Titulo_editado",
+    "descripcion": "Post Content editado",
+    "fecha_creacion": "2021-09-01 00:00:00",
+    "categoria": "Categoria 1 edit",
+    "autor_id": "1"
+}
+###
+// Método para actualizar un autor específico por su id
+PUT {{HOST}}/api/autors/14
+Content-Type: application/json
+
+{
+    "nombre": "Nombre_editado",
+    "email": "email_de_pruebas editado",
+    "imagen": "https://imagendeejemploeditada.com/images.jpg"
+}
+###
+// Método para eliminar una publicación específica por su id
+DELETE {{HOST}}/api/posts/2
+Content-Type: application/json
+###
+// Método para eliminar un autor específico por su id
+DELETE {{HOST}}/api/autors/2
+Content-Type: application/json

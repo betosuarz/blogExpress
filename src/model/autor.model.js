@@ -2,7 +2,7 @@ const selectAll = () => {
     return db.query('SELECT * FROM autor');
 }
 
-const SelectById = (id) => {
+const selectById = (id) => {
     return db.query('SELECT * FROM autor WHERE id = ?', [id]);
 }
 
@@ -10,6 +10,12 @@ const insert = ({ nombre, email, imagen }) => {
     return db.query('INSERT INTO autor (nombre, email, imagen) VALUES (?, ?, ?)', [nombre, email, imagen]);
 }
 
+const updateAutorById = (id, { nombre, email, imagen }) => {
+    return db.query(
+        'UPDATE autor SET nombre = ?, email = ?, imagen = ? WHERE id = ? ', [nombre, email, imagen, id]
+    );
+}
+
 module.exports = {
-    selectAll, SelectById, insert
+    selectAll, selectById, insert, updateAutorById
 }

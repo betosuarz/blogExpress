@@ -47,6 +47,22 @@ const createPost = async (req, res, next) => {
     }
 }
 
+const updatePostById = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+
+        const [result] = await post.updatePostById(id, req.body);
+        if (result.changedRows === 1) {
+            const [[updatedPost]] = await post.selectById(id);
+            res.json(updatedPost);
+        } else {
+            res.status(404).json({ error: 'Se ha producido un error al actualizar la publicación' });
+        }
+    } catch (err) {
+        next(err);
+    }
+}
+
 module.exports = {
-    getAllPosts, getPostById, getPostsByAutorId, createPost
+    getAllPosts, getPostById, getPostsByAutorId, createPost, updatePostById
 }

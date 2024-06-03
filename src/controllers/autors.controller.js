@@ -32,6 +32,22 @@ const createAutor = async (req, res, next) => {
     }
 }
 
+const updateAutorById = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+
+        const [result] = await autor.updateAutorById(id, req.body);
+        if (result.changedRows === 1) {
+            const [[updateAutor]] = await autor.selectById(id);
+            res.json(updateAutor);
+        } else {
+            res.status(404).json({ error: 'Se ha producido un error al actualizar el autor' });
+        }
+    } catch (err) {
+        next(err);
+    }
+}
+
 module.exports = {
-    getAllAutors, getAutorById, createAutor
+    getAllAutors, getAutorById, createAutor, updateAutorById
 }
