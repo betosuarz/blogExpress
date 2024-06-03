@@ -6,7 +6,7 @@
 GET {{HOST}}/api/posts
 ###
 // Método para recuperar un post específico por su id 
-GET {{HOST}}/api/posts/2
+GET {{HOST}}/api/posts/11
 ###
 // Método para recuperar todos los posts de un autor específico
 GET {{HOST}}/api/posts/autor/11
@@ -19,11 +19,11 @@ POST {{HOST}}/api/posts
 Content-Type: application/json
 
 {
-    "titulo": "Titulo_prueba",
+    "titulo": "Titulo_prueba final",
     "descripcion": "Post Content",
     "fecha_creacion": "2021-09-01 00:00:00",
-    "categoria": "Categoria 1",
-    "autor_id": "1"
+    "categoria": "Categoria final",
+    "autor_id": "10"
 }
 ###
 // Método para crear un nuevo autor en la base de datos
@@ -31,17 +31,17 @@ POST {{HOST}}/api/autors
 Content-Type: application/json
 
 {
-    "nombre": "Contenido_titulo",
-    "email": "email_de_pruebas",
-    "imagen": "https://example.com/images.jpg"
+    "nombre": "Contenido_titulo prueba final",
+    "email": "email_de_pruebass2",
+    "imagen": "https://example_prueba_final.com/images.jpg"
 }
 ###
 // Método para actualizar una publicación específica por su id
-PUT {{HOST}}/api/posts/30
+PUT {{HOST}}/api/posts/37
 Content-Type: application/json
 
 {
-    "titulo": "Titulo_editado",
+    "titulo": "Titulo_editado_final",
     "descripcion": "Post Content editado",
     "fecha_creacion": "2021-09-01 00:00:00",
     "categoria": "Categoria 1 edit",
@@ -49,19 +49,19 @@ Content-Type: application/json
 }
 ###
 // Método para actualizar un autor específico por su id
-PUT {{HOST}}/api/autors/14
+PUT {{HOST}}/api/autors/23
 Content-Type: application/json
 
 {
-    "nombre": "Nombre_editado",
-    "email": "email_de_pruebas editado",
+    "nombre": "Nombre_editado_fffinal",
+    "email": "email_de_pruebas editadofff",
     "imagen": "https://imagendeejemploeditada.com/images.jpg"
 }
 ###
 // Método para eliminar una publicación específica por su id
-DELETE {{HOST}}/api/posts/34
+DELETE {{HOST}}/api/posts/37
 Content-Type: application/json
 ###
 // Método para eliminar un autor específico por su id
-DELETE {{HOST}}/api/autors/18
+DELETE {{HOST}}/api/autors/23
 Content-Type: application/json

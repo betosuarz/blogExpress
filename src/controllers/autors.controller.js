@@ -11,7 +11,7 @@ const getAllAutors = async (req, res, next) => {
 
 const getAutorById = async (req, res, next) => {
     try {
-        const [result] = await autor.SelectById(req.params.id);
+        const [result] = await autor.selectById(req.params.id);
         if (result.length === 0) {
             return res.status(404).json({ error: 'El autor no ha sido encontrado' });
         }
@@ -25,7 +25,7 @@ const getAutorById = async (req, res, next) => {
 const createAutor = async (req, res, next) => {
     try {
         const [result] = await autor.insert(req.body); 
-        const [[newAutor]] = await autor.SelectById(result.insertId);
+        const [[newAutor]] = await autor.selectById(result.insertId);
         res.json(newAutor);
     } catch (err) {
         next(err);        
