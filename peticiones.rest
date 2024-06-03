@@ -37,7 +37,7 @@ Content-Type: application/json
 }
 ###
 // Método para actualizar una publicación específica por su id
-PUT {{HOST}}/api/posts/37
+PUT {{HOST}}/api/posts/38
 Content-Type: application/json
 
 {
@@ -49,7 +49,7 @@ Content-Type: application/json
 }
 ###
 // Método para actualizar un autor específico por su id
-PUT {{HOST}}/api/autors/23
+PUT {{HOST}}/api/autors/24
 Content-Type: application/json
 
 {
@@ -59,9 +59,9 @@ Content-Type: application/json
 }
 ###
 // Método para eliminar una publicación específica por su id
-DELETE {{HOST}}/api/posts/37
+DELETE {{HOST}}/api/posts/38
 Content-Type: application/json
 ###
 // Método para eliminar un autor específico por su id
-DELETE {{HOST}}/api/autors/23
+DELETE {{HOST}}/api/autors/24
 Content-Type: application/json
