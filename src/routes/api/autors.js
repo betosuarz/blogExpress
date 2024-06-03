@@ -1,9 +1,12 @@
 const router = require('express').Router();
 
-const { getAllAutors, createAutors } = require('../../controllers/autors.controller');
+const { getAllAutors, getAutorById, createAutor, updateAutorById, deleteAutorById } = require('../../controllers/autors.controller');
 
 router.get('/', getAllAutors);
-router.post('/', createAutors);
+router.get('/:id', getAutorById);
+router.post('/', createAutor);
+router.put('/:id', updateAutorById);
+router.delete('/:id', deleteAutorById);
 
 
-module.exports = router;
+module.exports = router; 

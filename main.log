@@ -1,0 +1,12 @@
+[2024-06-03 17:57:25] Método: GET. Url: /api/posts
+[2024-06-03 17:57:39] Método: GET. Url: /api/posts/11
+[2024-06-03 17:57:44] Método: GET. Url: /api/posts/autor/11
+[2024-06-03 17:57:59] Método: GET. Url: /api/autors
+[2024-06-03 17:58:12] Método: POST. Url: /api/posts
+[2024-06-03 17:58:15] Método: POST. Url: /api/autors
+[2024-06-03 17:58:29] Método: PUT. Url: /api/posts/38
+[2024-06-03 17:58:34] Método: PUT. Url: /api/autors/24
+[2024-06-03 17:58:59] Método: DELETE. Url: /api/posts/38
+[2024-06-03 17:59:01] Método: DELETE. Url: /api/posts/38
+[2024-06-03 17:59:05] Método: DELETE. Url: /api/autors/24
+[2024-06-03 17:59:06] Método: DELETE. Url: /api/autors/24
