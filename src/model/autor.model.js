@@ -16,6 +16,10 @@ const updateAutorById = (id, { nombre, email, imagen }) => {
     );
 }
 
+const deleteAutorById = (id) => {
+    return db.query('DELETE FROM autor WHERE id = ?', [id]);
+}
+
 module.exports = {
-    selectAll, selectById, insert, updateAutorById
+    selectAll, selectById, insert, updateAutorById, deleteAutorById
 }

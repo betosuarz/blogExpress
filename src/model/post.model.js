@@ -54,6 +54,10 @@ const updatePostById = (id, { titulo, descripcion, fecha_creacion, categoria, au
     );
 }
 
+const deletePostById = (id) => {
+    return db.query('DELETE FROM post WHERE id = ?', [id]);
+}
+
 module.exports = {
-    selectAll, selectAllWithAuthor, selectById, selectByAutorId, insert, updatePostById
+    selectAll, selectAllWithAuthor, selectById, selectByAutorId, insert, updatePostById, deletePostById
 }

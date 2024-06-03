@@ -48,6 +48,22 @@ const updateAutorById = async (req, res, next) => {
     }
 }
 
+const deleteAutorById = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        
+        const [result] = await autor.deleteAutorById(id);
+
+        if (result.affectedRows === 1) {
+            res.json({ succes: 'El autor ha sido eliminado satisfactoriamente' });
+        } else {
+            res.status(404).json({ error: 'El autor no existe' });
+        }
+    } catch (err) {
+        next(err);
+    }
+}
+
 module.exports = {
-    getAllAutors, getAutorById, createAutor, updateAutorById
+    getAllAutors, getAutorById, createAutor, updateAutorById, deleteAutorById
 }

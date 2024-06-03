@@ -63,6 +63,22 @@ const updatePostById = async (req, res, next) => {
     }
 }
 
+const deletePostById = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        
+        const [result] = await post.deletePostById(id);
+
+        if (result.affectedRows === 1) {
+            res.json({ succes: 'La publicación ha sido eliminada satisfactoriamente' });
+        } else {
+            res.status(404).json({ error: 'La publicación no existe' });
+        }
+    } catch (err) {
+        next(err);
+    }
+}
+
 module.exports = {
-    getAllPosts, getPostById, getPostsByAutorId, createPost, updatePostById
+    getAllPosts, getPostById, getPostsByAutorId, createPost, updatePostById, deletePostById
 }
